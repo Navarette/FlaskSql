@@ -16,7 +16,7 @@ def result():
 
     # invio query al DB e ricezione informazioni
     NomeProdotto = request.args['NomeProdotto']
-    query = f"select * from production.products where product.name like '{NomeProdotto}%' " #metodo che utilizza python per inserire variabili dentro una stringa f=format
+    query = f"select * from production.products where product_name like '{NomeProdotto}%' " #metodo che utilizza python per inserire variabili dentro una stringa f=format
     df_prodotti = pd.read_sql(query,conn)
     # visualizzare le informazioni.
 
@@ -24,4 +24,4 @@ def result():
     
 
 if __name__ == "__main__":
-  app.run(debug=True, host="0.0.0.0", port=2222)
+  app.run(debug=True, host="0.0.0.0", port=2221)
