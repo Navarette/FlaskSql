@@ -29,7 +29,7 @@ def selezione():
         return redirect(url_for('es2'))
     else:
         return redirect(url_for('es3'))   
-    
+  # 1 
 @app.route("/es1", methods=["GET"])
 def es1():
     global numProdotti
@@ -52,7 +52,7 @@ def grafico():
     FigureCanvas(fig).print_png(output)
     
     return Response(output.getvalue(), mimetype='image/png')  
-
+  # 2 
 @app.route("/es2", methods=["GET"])
 def es2():
     global numOrdini
@@ -63,7 +63,7 @@ def es2():
 @app.route("/grafico1", methods=["GET"])
 def grafico1():
     #costruzione del grafico
-    fig, ax = plt.subplots(figsize = (5,5))
+    fig, ax = plt.subplots(figsize = (10,9))
     fig.autofmt_xdate(rotation=45)  
 
     x = numOrdini.store_name
@@ -75,7 +75,7 @@ def grafico1():
     FigureCanvas(fig).print_png(output)
     
     return Response(output.getvalue(), mimetype='image/png')   
-
+  # 3
 @app.route("/es3", methods=["GET"])
 def es3():
     global numProdotti
